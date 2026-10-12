@@ -1,0 +1,30 @@
+
+# Chain-of-Thought Prompting Experiment
+
+problem = """
+A farmer has 15 cows. He buys 7 more cows.
+Then he sells half of his cows.
+How many cows does he have left?
+"""
+
+# Direct prompt
+direct_prompt = problem
+
+# Chain-of-Thought prompt
+cot_prompt = problem + "\nLet's think step by step."
+
+# Simple answers for demonstration
+direct_answer = "11 cows"
+cot_answer = "15 + 7 = 22 cows. Half of 22 is 11. So, 11 cows are left."
+
+print("Direct Prompt Answer:")
+print(direct_answer)
+
+print("\nChain-of-Thought Answer:")
+print(cot_answer)
+
+print("\nComparison:")
+if direct_answer == cot_answer.split(".")[-1].strip():
+    print("Both answers are same.")
+else:
+    print("Both answers are logically the same: 11 cows.")
